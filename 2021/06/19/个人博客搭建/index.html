@@ -186,7 +186,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      418 字
+      378 字
     </span>
   
 
@@ -196,7 +196,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      4
        分钟
     </span>
   
@@ -242,7 +242,7 @@
 <h4 id="2、创建仓库"><a href="#2、创建仓库" class="headerlink" title="2、创建仓库"></a>2、创建仓库</h4><p>在gitee中新建一个你的码云仓库，仓库名为</p>
 <p><strong><a href="https://gitee.com/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://gitee.com/你的用户名/仓库名</a></strong></p>
 <p><strong>开启gitee page</strong>：</p>
-<p>​    ![](个人博客搭建\屏幕截图 2021-06-19 172004.png)</p>
+<p><img src="1.png" srcset="/blog/img/loading.gif"></p>
 <h4 id="3、配置ssh-key"><a href="#3、配置ssh-key" class="headerlink" title="3、配置ssh key"></a>3、配置ssh key</h4><p>1、桌面右键使用git bash打开，设置user.name和user.email配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;你的GitHub用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;你的Gitte注册邮箱&quot;</span><br></code></pre></td></tr></table></figure>
 <p>2、生成ssh密钥</p>
@@ -252,29 +252,23 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cat ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure>
 <p>复制上面的密钥信息即可</p>
 <p>4、添加密钥到gitee</p>
-<p>![](个人博客搭建\屏幕截图 2021-06-19 170147.png)</p>
+<p><img src="2.png" srcset="/blog/img/loading.gif"></p>
 <h4 id="4、安装hexo"><a href="#4、安装hexo" class="headerlink" title="4、安装hexo"></a>4、安装hexo</h4><ol>
-<li><p>打开git bash输入代码</p>
-<ol>
-<li>```bash<br>npm install hexo-cli -g<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br><span class="hljs-number">2</span>. 等待完成后输入，查看是否安装完成<br><br><span class="hljs-number">3</span>. ```bash<br>   hexo -v<br></code></pre></td></tr></table></figure></li>
+<li>打开git bash输入代码<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+等待完成后输入，查看是否安装完成<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo -v<br></code></pre></td></tr></table></figure></li>
+<li>进入需要安装到的目录，初始化hexo</li>
 </ol>
-</li>
-<li><p>初始化hexo</p>
-<ol>
-<li><p>选择需要安装到的目录，右键打开git bash</p>
-</li>
-<li><p>```bash<br>npm install hexo –save</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br><span class="hljs-number">3</span>. ```bash<br>   hexo init #初始化<br></code></pre></td></tr></table></figure></li>
-<li><p>```<br>npm install</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br><span class="hljs-number">5</span>. ```bash<br>   hexo g #部署加载静态文件<br></code></pre></td></tr></table></figure></li>
-<li><pre><code class="bash">hexo s #打开本地服务器预览
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plain"><br>#### 5、配置_config.yml文件<br><br>&gt; 打开目录下的_config.yml文件，末尾补充<br>&gt;<br>&gt; deploy:<br>&gt;   type: git<br>&gt;   repo: https:&#x2F;&#x2F;gitee.com&#x2F;你的空间名&#x2F;仓库名<br>&gt;<br>&gt;   branch: master<br><br>#### 6、提交、部署<br><br>&gt; 安装部署工具：npm install hexo-deployer-git -save<br><br>&#96;&#96;&#96;bash<br>hexo d #直接部署到gitee即可<br></code></pre></td></tr></table></figure>
-回到gitee更新页面即可看到内容
-</code></pre>
-</li>
-</ol>
-</li>
-</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;dir&quot;</span><br>npm install hexo --save<br>hexo init <span class="hljs-comment">#初始化</span><br><br><span class="hljs-comment">#常用指令</span><br>hexo clean <span class="hljs-comment">#清除静态文件</span><br>hexo g <span class="hljs-comment">#部署加载静态文件</span><br>hexo s <span class="hljs-comment">#打开本地服务器预览</span><br>hexo d <span class="hljs-comment">#部署推送</span><br></code></pre></td></tr></table></figure>
+<h4 id="5、配置-config-yml文件"><a href="#5、配置-config-yml文件" class="headerlink" title="5、配置_config.yml文件"></a>5、配置_config.yml文件</h4><blockquote>
+<p>打开目录下的_config.yml文件，末尾补充</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://gitee.com/%E4%BD%A0%E7%9A%84%E7%A9%BA%E9%97%B4%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://gitee.com/你的空间名/仓库名</a></p>
+<p>  branch: master</p>
+</blockquote>
+<h4 id="6、提交、部署"><a href="#6、提交、部署" class="headerlink" title="6、提交、部署"></a>6、提交、部署</h4><blockquote>
+<p>安装部署工具：npm install hexo-deployer-git -save</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo d <span class="hljs-comment">#直接部署到gitee即可</span><br></code></pre></td></tr></table></figure>
+<p>回到gitee更新页面即可看到内容</p>
 
             </div>
             <hr>
@@ -302,8 +296,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2021/02/28/Python%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%EF%BC%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%E3%80%81%E5%A4%9A%E8%BF%9B%E7%A8%8B%E3%80%81%E5%A4%9A%E5%8D%8F%E7%A8%8B%EF%BC%89/">
-                        <span class="hidden-mobile">Python并发编程</span>
+                      <a href="/blog/2021/06/19/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
